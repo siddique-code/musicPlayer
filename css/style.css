@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@500&display=swap");
+:root {
+  --a:0;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.left {
+  width: 25vw;
+  padding: 10px;
+  min-height: 95vh;
+}
+.cross {
+  display: none;
+}
+.right {
+  width: 75vw;
+  margin: 15px 0px;
+  min-height: 95vh;
+}
+.home ul li {
+  width: 32px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 10px;
+  font-family: "Nunito", sans-serif;
+}
+.library {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  position: relative;
+  min-height: 70vh;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding-top: 12px;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+}
+.heading img {
+  width: 32px;
+  height: 25px;
+}
+.more img {
+  width: 15px;
+  padding: 0 0 0 100px;
+}
+.songList {
+  height: 300px;
+  overflow: auto;
+  margin: 8px 0px 24px;
+}
+.songList ul {
+  /* padding: 10px; */
+  font-family: "Nunito", sans-serif;
+}
+.songList ul li {
+  list-style-type: decimal;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.info {
+  font-size: 14px;
+  width: 142px;
+}
+.playnow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playnow span {
+  font-size: 10px;
+  width: 60px;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  gap: 15px 40px;
+  position: absolute;
+  bottom: 12px;
+  margin-top: 12px;
+}
+.footer a {
+  color: rgb(179, 179, 179);
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  width: 34px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #2e2d2d;
+  height: 93px;
+  border-radius: 8px;
+}
+.right {
+  position: relative;
+  margin-right: 10px;
+}
+/* .header > * {
+  padding: 20px;
+} */
+
+.nav {
+  display: flex;
+  padding: 20px 0px 20px 20px;
+}
+.button {
+  padding: 20px 20px 20px 0px;
+}
+.hamburger {
+  display: none;
+}
+.nav img {
+  width: 28px;
+}
+.sign {
+  font-weight: 800;
+  font-family: "Nunito", sans-serif;
+  padding: 15px 25px;
+  border-radius: 25px;
+  background: #2e2d2d;
+  border: 2px solid #2e2d2d;
+  color: #a7a3a3;
+  font-size: 13px;
+  cursor: pointer;
+}
+.sign:hover {
+  font-size: 13.5px;
+  color: white;
+}
+.login {
+  margin: 0 0 0 15px;
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: 2px solid white;
+  font-weight: 800;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+}
+.login:hover {
+  padding: 15.5px 25.5px;
+  font-weight: 800;
+}
+.spotifyPlaylist {
+  padding: 14px;
+}
+.spotifyPlaylist h1 {
+  padding: 15px;
+  font-family: "Nunito", sans-serif;
+}
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.spotifyPlaylist .card {
+  width: 165px;
+  padding: 0px 12px;
+  position: relative;
+}
+.play {
+  position: relative;
+  width: 25%;
+  top: 48%;
+  right: -70%;
+  opacity: var(--a);
+}
+/* .play:hover {
+  opacity: 1;
+  top: 125px;
+} */
+.card {
+  transition: all 0.9s;
+}
+.card:hover {
+  --a:1;
+  cursor: pointer;
+  background-color: rgb(71, 71, 71);
+}
+.card img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.card h2 {
+  font-size: smaller;
+  font-family: "Nunito", sans-serif;
+  padding: 10px 0;
+}
+.card p {
+  font-family: "Nunito", sans-serif;
+  font-size: small;
+  /* padding: 0 0 20px; */
+}
+.playbar {
+  position: absolute;
+  bottom: 0px;
+  background: rgb(104, 99, 99);
+  width: 71vw;
+  min-height: 40px;
+  padding: 10px 0px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.seekbar {
+  height: 5px;
+  width: 98%;
+  background: white;
+  position: absolute;
+  bottom: 2px;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+.circle {
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+  bottom: -4px;
+  left: 0%;
+  transition: left 0.5s;
+}
+.songbuttons {
+  display: flex;
+  justify-self: center;
+  gap: 8px;
+}
+.songbuttons img {
+  cursor: pointer;
+}
+.songinfo {
+  width: 150px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  padding: 0 10px;
+}
+.timevol,
+.volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.volume {
+  cursor: pointer;
+}
+input {
+  cursor: pointer;
+}
