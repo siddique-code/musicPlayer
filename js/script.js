@@ -16,7 +16,7 @@ function formatTime(seconds) {
 
 async function getSongs(folder) {
   currFolder = folder;
-  let a = await fetch(`./${folder}/`);
+  let a = await fetch(`musicPlayer/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -75,7 +75,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  let a = await fetch(`./songs/`);
+  let a = await fetch(`musicPlayer/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -96,7 +96,7 @@ async function displayAlbums() {
       console.log("Folder:", folder);
 
       //Get the metadata of the folder
-      let a = await fetch(`./songs/${folder}/info.json`);
+      let a = await fetch(`musicPlayer/songs/${folder}/info.json`);
       let response = await a.json();
       console.log("Response:", response);
 
