@@ -85,7 +85,7 @@ async function displayAlbums() {
   for (let index = 0; index < array.length; index++) {
     const e = array[index];
 
-    if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
+    if (e.href.includes("/songs") && !e.href.includes(".keep")) {
       let url = new URL(e.href);
       let pathParts = url.pathname.split("/").filter(Boolean); // removes empty strings
       let folder = pathParts[pathParts.length - 1]; // last segment
