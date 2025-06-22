@@ -93,14 +93,13 @@ async function displayAlbums() {
       // skip if not a valid folder
       if (!folder || folder === "songs") continue;
 
-      console.log("Folder:", folder);
+      // console.log("Folder:", folder);
 
       //Get the metadata of the folder
       let a = await fetch(`./songs/${folder}/info.json`);
       let response = await a.json();
-      console.log("Response:", response);
+      // console.log("Response:", response);
 
-      console.log(response);
       cardContainer.innerHTML =
         cardContainer.innerHTML +
         `<div data-folder="${folder}" class="card">
