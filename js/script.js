@@ -80,7 +80,7 @@ async function displayAlbums() {
                                 <polygon points="40,30 70,50 40,70" fill="black" />
                             </svg>
                         </div>
-                        <img src="/songs/${folder}/cover.jpg" alt="">
+                        <img src="./songs/${folder}/cover.jpg" alt="">
                         <h2>${response.title}</h2>
                         <p>${response.description}</p>
                     </div>`;
@@ -101,7 +101,7 @@ async function main() {
   const next = document.getElementById("next");
   const play = document.getElementById("play");
 
- // Load index.json and first folder
+  // Load index.json and first folder
   let a = await fetch("./songs/index.json");
   let folders = await a.json();
   await getSongs(`songs/${folders[0]}`);
@@ -156,20 +156,18 @@ async function main() {
 
   //Add an event listener to previous
   previous.addEventListener("click", () => {
-    console.log("previous clicked");
-    console.log(currentSong);
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-    if (index - 1 >= 0) {
+    let currentTrack = decodeURIComponent(currentSong.src.split("/").pop());
+    let index = songs.indexOf(currentTrack);
+    if (index > 0) {
       playMusic(songs[index - 1]);
     }
   });
 
   //Add an event listener to next
   next.addEventListener("click", () => {
-    console.log("next clicked");
-    console.log(currentSong);
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-    if (index + 1 < songs.length) {
+    let currentTrack = decodeURIComponent(currentSong.src.split("/").pop());
+    let index = songs.indexOf(currentTrack);
+    if (index !== -1 && index < songs.length - 1) {
       playMusic(songs[index + 1]);
     }
   });
